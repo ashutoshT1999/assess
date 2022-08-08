@@ -1,0 +1,77 @@
+<form #employee="ngForm" (ngSubmit)=" employeedetails(employee)">
+    <div class="form-group mb-3">
+        <label for="firstname" style="font">First name</label>
+        <input type="email" required #firstname="ngModel" class="form-control" id="firstname" name="firstname" ngModel
+            placeholder="First name">
+        <mat-error *ngIf="firstname.invalid && firstname.touched">
+            <span style="color: red;"> Firstname is <strong>required</strong></span>
+        </mat-error>
+    </div>
+    <div class="form-group mb-3">
+        <label for="middlename">Mid name</label>
+        <input type="email" required #middlename="ngModel" class="form-control" id="middlename" name="middlename"
+            ngModel placeholder="middle name">
+        <!-- <mat-error *ngIf="middlename.invalid && middlename.touched">
+            <span style="color: red;"> middlename is <strong>required</strong></span>
+        </mat-error> -->
+    </div>
+    <div class="form-group mb-3">
+        <label for="lastname">last name</label>
+        <input type="email" required #lastname="ngModel" class="form-control" id="lastname" name="lastname" ngModel
+            placeholder="last name">
+        <mat-error *ngIf="lastname.invalid && lastname.touched">
+            <span style="color: red;"> lastname is <strong>required</strong></span>
+        </mat-error>
+    </div>
+    <div class="form-group mb-3">
+        <label for="age">age</label>
+        <input type="email" required #age="ngModel" class="form-control" id="age" name="age" ngModel placeholder="age">
+        <mat-error *ngIf="age.invalid && age.touched">
+            <span style="color: red;"> age is <strong>required</strong></span>
+        </mat-error>
+    </div>
+    <div class="form-group mb-3">
+        <select name="gender" id="gender" ngModel required #gender="ngModel">
+            <option value="">select gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <mat-error *ngIf="gender.invalid && gender.touched">
+            <span style="color: red;"> gender is <strong>required</strong></span>
+        </mat-error>
+    </div>
+
+    <div class="form-group mb-3">
+        <label for="dob" class="form-label text">Date of Birth</label>
+        <input type="date" name="dob" id="dob" class="form-control" name="dob" ngModel required #dob="ngModel">
+        <mat-error *ngIf="dob.invalid && dob.touched">
+            <span style="color: red;"> dob is <strong>required</strong></span>
+        </mat-error>
+    </div>
+    <div class="form-group mb-3">
+        <label for="address">Adddress-1</label>
+        <input type="email" required #address="ngModel" class="form-control" id="address" name="address" ngModel
+            placeholder="last name">
+        <mat-error *ngIf="address.invalid && address.touched">
+            <span style="color: red;"> address-1 is <strong>required</strong></span>
+        </mat-error>
+    </div>
+    <div class="form-group mb-3">
+        <label for="address2">Address-2</label>
+        <input type="email" class="form-control" id="address2" name="address2" ngModel placeholder="address-2">
+    </div>
+    <div class="form-group mb-3">
+        <label for="pincode" class="form-label text">Pincode</label>
+        <input id="pincode" class="form-control" placeholder="pincode" type="text" name="pincode" ngModel required
+            #pincode="ngModel">
+        <mat-error *ngIf="pincode.invalid && pincode.touched">
+            <span style="color: red;"> pincode is <strong>required</strong></span>
+        </mat-error>
+        <mat-error *ngIf="pincode.value">
+            <span style="color: red;" *ngIf="pincode.value.length!=6">pincode must be of <strong>6
+                    digits</strong></span>
+        </mat-error>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<!-- <employeelist [details]="person"></employeelist> -->
