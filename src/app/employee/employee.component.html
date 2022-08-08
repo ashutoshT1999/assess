@@ -33,6 +33,7 @@
             </mat-error>
         </div>
         <div class="form-group mb-3">
+            <label for="gender" style="font-size: larger;">Gender</label>
             <select name="gender" id="gender" ngModel required #gender="ngModel">
                 <option value="">select gender</option>
                 <option value="male">Male</option>
@@ -74,7 +75,8 @@
                         digits</strong></span>
             </mat-error>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" *ngIf="employee.invalid" class="btn btn-danger" disable>SUBMIT button available "only" if all the data is valid</button>
+        <button type="submit" *ngIf="employee.valid" class="btn btn-primary" disable>Submit</button>
     </div>
 </form>
 <!-- <employeelist [details]="person"></employeelist> -->
